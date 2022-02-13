@@ -20,6 +20,26 @@
         <mdb-button text="warning" appearance="warning"></mdb-button>
         <mdb-button text="danger" appearance="danger"></mdb-button>
       </div>
+      <hr>
+      <div class="row">
+        <h3>Modal</h3>
+      </div>
+      <div class="row space-between">
+        <mdb-button id="modal-btn" text="Open modal" appearance="primary"></mdb-button>
+        <mdb-modal id="modal" header="Modal header" appearance="primary" buttons='[{"text": "Confirm"}, {"text": "Cancel"}]'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima eum animi quo repellat dignissimos ab, architecto inventore iste quos magni dolore nihil et, quaerat saepe voluptas est consequuntur temporibus pariatur?</mdb-modal>
+      </div>
     </div>
   </body>
+  <script>
+    const btn = document.querySelector('#modal-btn');
+    const modal = document.querySelector('#modal');
+
+    btn.addEventListener('click', () => {
+      modal.isopen = true;
+    })
+
+    modal.addEventListener('action', () => {
+      alert('Confirmation successfull!');
+    })
+  </script>
 </html>
