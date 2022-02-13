@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'mdb-button',
@@ -6,12 +6,14 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class MdbButton {
+  @Prop() text: string;
+  @Prop() appearance: string;
 
   render() {
     return (
-      <Host>
-        <slot></slot>
-      </Host>
+      <button class={`btn ${this.appearance}`} type="button">
+        {this.text}
+      </button>
     );
   }
 
